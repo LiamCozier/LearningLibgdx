@@ -1,6 +1,7 @@
 package io.github.some_example_name;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -14,7 +15,7 @@ public class Main extends ApplicationAdapter {
     private SpriteBatch batch;
     private Texture image;
     private ShapeRenderer sr;
-    private Ball[] balls = new Ball[2];
+    private Ball[] balls = new Ball[20];
 
     @Override
     public void create() {
@@ -24,7 +25,7 @@ public class Main extends ApplicationAdapter {
         for (i=0; i<balls.length; i++) {
             int[] position = {r.nextInt(1200)+40, r.nextInt(700)+10};
             int[] velocity = {r.nextInt(1)+3,r.nextInt(1)+3};
-            int[] dimensions = {200, 200};
+            int[] dimensions = {70, 70};
             balls[i] = new Ball(position, velocity, dimensions);
         }
 
@@ -40,15 +41,16 @@ public class Main extends ApplicationAdapter {
         //batch.draw(image, 140, 210);
         //batch.end();
 
+        ball_collision(balls);
 
         sr.begin(ShapeRenderer.ShapeType.Filled);
-        sr.setColor(1, 0, 0, 1);
         for (Ball b : balls) {
+
             b.move();
-            if (balls[0].is_intersecting_with(balls[1])) {
-                sr.setColor(0, 1, 0, 1);
-            }
+
+            sr.setColor(b.color);
             sr.rect(b.position[0], b.position[1], b.dimensions[0], b.dimensions[1]);
+
         }
         sr.end();
     }
@@ -60,8 +62,29 @@ public class Main extends ApplicationAdapter {
     }
 
     public void ball_collision(Ball[] ball_array) {
-        for (Ball ball : ball_array) {
+        for (Ball b : ball_array) {
+            for (Ball c: ball_array) {
 
+                if (b.id == c.id) {
+                    continue; //dont collide with self
+                }
+
+                if (!b.is_intersecting_with(c)) {
+                    continue; //dont do anything if there are no collisions
+                }
+
+
+                int i;
+                i = b.intersection_direction(c);
+                b.velocity[i] *= -1;
+                c.velocity[i] *= -1;
+
+                int shift = b.velocity[i];
+                while (b.is_intersecting_with(c)) {
+                    b.position[i] += shift;
+                    shift *= -2;
+                }
+            }
         }
     }
 
