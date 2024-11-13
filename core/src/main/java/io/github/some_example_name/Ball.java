@@ -9,6 +9,7 @@ public class Ball {
         position = init_position;
         velocity = init_velocity;
         dimensions = init_dimensions;
+
     }
 
     public void move() {
@@ -20,5 +21,24 @@ public class Ball {
             }
             position[i]+=velocity[i];
         }
+    }
+
+    public boolean is_intersecting_with(Ball b) {
+        boolean is_intersecting = false;
+
+        is_intersecting = ((double) dimensions[0] > distance_to(b)) || ((double) dimensions[1] > distance_to(b));
+
+        return is_intersecting;
+    }
+
+    public double distance_to(Ball b) {
+        double x_magnitude, y_magnitude, distance;
+
+        x_magnitude = Math.abs(position[0]-b.position[0]);
+        y_magnitude = Math.abs(position[1]-b.position[1]);
+        distance = Math.sqrt(Math.pow(x_magnitude, 2) + Math.pow(y_magnitude, 2));
+        //a^2 + b^2 = c^2
+
+        return distance;
     }
 }

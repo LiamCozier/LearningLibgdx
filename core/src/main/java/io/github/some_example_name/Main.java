@@ -1,14 +1,11 @@
 package io.github.some_example_name;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-import java.awt.*;
 import java.util.Random;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
@@ -26,8 +23,8 @@ public class Main extends ApplicationAdapter {
         int i;
         for (i=0; i<balls.length; i++) {
             int[] position = {r.nextInt(1200)+40, r.nextInt(700)+10};
-            int[] velocity = {r.nextInt(7)+3,r.nextInt(7)+3};
-            int[] dimensions = {20, 20};
+            int[] velocity = {r.nextInt(1)+3,r.nextInt(1)+3};
+            int[] dimensions = {200, 200};
             balls[i] = new Ball(position, velocity, dimensions);
         }
 
@@ -45,8 +42,12 @@ public class Main extends ApplicationAdapter {
 
 
         sr.begin(ShapeRenderer.ShapeType.Filled);
+        sr.setColor(1, 0, 0, 1);
         for (Ball b : balls) {
             b.move();
+            if (balls[0].is_intersecting_with(balls[1])) {
+                sr.setColor(0, 1, 0, 1);
+            }
             sr.rect(b.position[0], b.position[1], b.dimensions[0], b.dimensions[1]);
         }
         sr.end();
@@ -57,4 +58,11 @@ public class Main extends ApplicationAdapter {
         batch.dispose();
         image.dispose();
     }
+
+    public void ball_collision(Ball[] ball_array) {
+        for (Ball ball : ball_array) {
+
+        }
+    }
+
 }
