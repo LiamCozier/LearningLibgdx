@@ -9,14 +9,15 @@ public class Ball {
 
 
     int[] position, velocity, dimensions;
-    int id;
+    int mass, id;
 
-    Color color = new Color(1, 1, 1, 1);
+    Color color = new Color(1, 0.6f, 1, 0.5f);
 
-    public Ball(int[] init_position, int[] init_velocity, int[] init_dimensions) {
+    public Ball(int[] init_position, int[] init_velocity, int[] init_dimensions, int init_mass) {
         Random r = new Random();
         id = r.nextInt();
 
+        mass=init_mass;
         position = init_position;
         velocity = init_velocity;
         dimensions = init_dimensions;
@@ -45,7 +46,7 @@ public class Ball {
         boolean is_intersecting;
 
         int[] distance_vector = displacement_to(b);
-        is_intersecting = (Math.abs(distance_vector[0]) < (double) dimensions[0]) && (Math.abs(distance_vector[1]) < (double) dimensions[1]);
+        is_intersecting = (Math.abs(distance_vector[0]) < (float) dimensions[0]) && (Math.abs(distance_vector[1]) < (float) dimensions[1]);
 
         return is_intersecting;
     }

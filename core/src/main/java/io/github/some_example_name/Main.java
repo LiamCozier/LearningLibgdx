@@ -1,7 +1,6 @@
 package io.github.some_example_name;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -15,7 +14,7 @@ public class Main extends ApplicationAdapter {
     private SpriteBatch batch;
     private Texture image;
     private ShapeRenderer sr;
-    private Ball[] balls = new Ball[20];
+    private Ball[] balls = new Ball[10];
 
     @Override
     public void create() {
@@ -23,10 +22,13 @@ public class Main extends ApplicationAdapter {
 
         int i;
         for (i=0; i<balls.length; i++) {
+            int scale_factor = (r.nextInt(9)+1);
+
             int[] position = {r.nextInt(1200)+40, r.nextInt(700)+10};
             int[] velocity = {r.nextInt(1)+3,r.nextInt(1)+3};
-            int[] dimensions = {70, 70};
-            balls[i] = new Ball(position, velocity, dimensions);
+            int[] dimensions = {10*scale_factor, 10*scale_factor};
+            int mass = scale_factor*scale_factor;
+            balls[i] = new Ball(position, velocity, dimensions, mass);
         }
 
         batch = new SpriteBatch();
@@ -66,18 +68,25 @@ public class Main extends ApplicationAdapter {
             for (Ball c: ball_array) {
 
                 if (b.id == c.id) {
-                    continue; //dont collide with self
+                    continue; //don't collide with self
                 }
 
                 if (!b.is_intersecting_with(c)) {
-                    continue; //dont do anything if there are no collisions
+                    continue; //don't do anything if there are no collisions
                 }
+
 
 
                 int i;
                 i = b.intersection_direction(c);
-                b.velocity[i] *= -1;
-                c.velocity[i] *= -1;
+
+                int total_velocity = Math.abs(b.velocity[i])+Math.abs(c.velocity[i]);
+                int total_mass = b.mass + c.mass;
+                int new_b_sign = b.velocity[i]/Math.abs(b.velocity[i]) * -1;
+                int new_c_sign = c.velocity[i]/Math.abs(c.velocity[i]) * -1;
+
+                b.velocity[i] = ((total_velocity*c.mass)/total_mass) * new_b_sign;
+                c.velocity[i] = ((total_velocity*b.mass)/total_mass) * new_c_sign;
 
                 int shift = b.velocity[i];
                 while (b.is_intersecting_with(c)) {
