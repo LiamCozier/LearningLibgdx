@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b025e5aa-1dd5-4b10-9703-d9323db7bb40" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/libgdx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/some_example_name/Ball.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/some_example_name/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/icons/logo.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/icons/logo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/icons/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/nativeimage.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/java/io/github/some_example_name/lwjgl3/Lwjgl3Launcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/java/io/github/some_example_name/lwjgl3/StartupHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/resources/libgdx128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/resources/libgdx16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/resources/libgdx32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/resources/libgdx64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/LearningJava2" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "LiamCozier"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/LiamCozier/LearningLibgdx.git",
+    "accountId": "abe0643b-f7bb-4ea0-8710-c88ef0d03deb"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2onjlf7mZjGIOvDs0bpSrhVY3aA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "H:/Java/libgdx/LearningLibgdx"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b025e5aa-1dd5-4b10-9703-d9323db7bb40" name="Changes" comment="" />
+      <created>1731512387123</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731512387123</updated>
+    </task>
+    <servers />
+  </component>
+</project>
